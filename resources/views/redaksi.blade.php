@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Kolaka Update - Berita Terkini Kolaka dan Sekitarnya</title>
+    <title>Redaksi | Kolaka Update</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="Kolaka Update" name="Kolaka, Update, Berita, Terkini">
     <meta content="Kolaka Update" name="Berita terkini kolaka dan sekitarnya.">
@@ -66,10 +66,12 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse justify-content-between px-0 px-lg-3" id="navbarCollapse">
-                <div class="navbar-nav mr-auto py-0 text-center align-items-center px-1">
-                    <a href="{{ url('/') }}" class="nav-item nav-link {{ Request::url() == url('/') ? 'active' : '' }} align-items-center font-weight-bold">Home</a>
+                <div class="navbar-nav mr-auto py-0 text-center align-items-center">
+                    <a href="{{ url('/') }}"
+                        class="nav-item nav-link {{ Request::url() == url('/') ? 'active' : '' }} align-items-center font-weight-bold">Home</a>
                     @foreach ($kategoris as $kategori)
-                    <a href="{{ url('/kategori/'.$kategori->slug_kategori) }}" class="nav-item nav-link align-items-center font-wight-bold {{ Request::url() == url('/kategori/'.$kategori->slug_kategori) ? 'active' : '' }}">{{ ucfirst($kategori->nama_kategori) }}</a>
+                    <a href="{{ url('/kategori/'.$kategori->slug_kategori) }}"
+                        class="nav-item nav-link align-items-center font-wight-bold {{ Request::url() == url('/kategori/'.$kategori->slug_kategori) ? 'active' : '' }}">{{ ucfirst($kategori->nama_kategori) }}</a>
                     @endforeach
                 </div>
                 <div class="input-group ml-auto" style="width: 100%; max-width: 300px;">
@@ -96,21 +98,6 @@
                     @endforeach
                 </div>
             </div>
-            <div class="owl-carousel owl-carousel-2 carousel-item-3 position-relative">
-                @forelse ($artikels as $artikel)
-                <div class="d-flex">
-                    <a href="#">
-                        <img src="{{ url('/assets/img/artikel/'.$artikel->gambar_artikel) }}"
-                            style="width: 80px; height: 80px; object-fit: cover;">
-                        <div class="d-flex align-items-center bg-light px-3" style="height: 80px;">
-                            <a class="text-secondary font-weight-semi-bold text-capitalize" href="{{url('/')}}/{{$artikel->slug_artikel}}">{{ Str::words(ucfirst($artikel->judul), 10) }}</a>
-                        </div>
-                    </a>
-                </div>
-                @empty
-                <span class="text-warning">Belum ada artikel.</span>
-                @endforelse
-            </div>
         </div>
     </div>
     <!-- Top News Slider End -->
@@ -120,36 +107,55 @@
     <div class="container-fluid py-3">
         <div class="container">
             <div class="row">
-                <div class="col-lg-4 col-sm-12 order-0 order-sm-first">
-                    @foreach ($bannersides as $bannerside)
-                    <img class="img-fluid mb-3" src="{{ Storage::url($bannerside->gambar_bannerside) }}" alt="">
-                    @endforeach
-                </div>
                 {{-- content --}}
-                <div class="col-lg-5 col-sm-12  order-first order-sm-0">
+                <div class="col-lg-9 col-sm-12  order-first order-sm-0">
                     <div>
-                        <div class="position-relative overflow-hidden mb-3 text-center" style="height: 300px;">
-                            <img class="img-fluid h-100" src="{{ url('/assets/img/artikel/'.$headlines->gambar_artikel) }}"
-                                style="object-fit: cover;">
-                            <div class="overlay text-left">
-                                <div class="" style="font-size: 13px; margin-bottom: 1rem !important">
-                                    <button class="btn btn-sm btn-primary text-white font-weight-bold mb-5"
-                                        style="margin-left:  -0.9rem !important; margin-bottom: 4.8rem !important">HEADLINE</button>
-                                </div>
-                                <div class="mb-1 mt-2">
-                                    @foreach ($headlines->kategoris as $kategori)
-                                    <a class="text-white" href="{{ url('/'."kategori/".$kategori->slug_kategori) }}">
-                                        {{ ucfirst($kategori->nama_kategori) }}
-                                        <span class="px-2 text-white">/</span>
-                                        <a class="text-white" href="">{{ $headlines->created_at->isoFormat('D MMMM Y'); }}</a>
-                                        @endforeach </a>
-                                </div>
-                                <a class="h4 m-0 font-weight-bold text-white text-capitalize" href="{{url('/')}}/{{$artikel->slug_artikel}}">{{ Str::words($headlines->judul, 11) }}</a>
-                            </div>
+                        <div class="d-flex align-items-center justify-content-between bg-primary py-2 px-4 mb-3">
+                            <h3 class="m-0 text-light">Redaksi</h3>
                         </div>
-                    </div>
-                    <div class="mb-4">
-                    @livewire('load-more')
+                        <div class="text-justify align-items-start text-center justify-content-between bg-light py-2 px-4 mb-3" >
+                            <p class="mt-2"><b>Kolaka Update</b> adalah media online yang berkedudukandi Kabupaten Kolaka, Sulawesi Tenggara, Indonesia.
+                            <p class="mb-4">
+                                <br> <b>Penerbit</b>
+                                <br> Penerbit</p>
+                                <P></P>
+                                <br> <b>Direktur Utama</b>
+                                <br> </p>
+                                <P></P>
+                                <br> <b>Komisaris</b>
+                                <br> </p>
+                                <P></P>
+                                <br> <b>Direktur</b>
+                                <br> </p>
+                                <P></P>
+                                <br> <b>Penanggung Jawab Redaksi</b>
+                                <br> </p>
+                                <P></P>
+                                <br> <b>Redaktur</b>
+                                <br> </p>
+                                <P></P>
+                                <br> <b>Manager IT</b>
+                                <br> </p>
+                                <P></P>
+                                <br> <b>Reporter</b>
+                                <br> </p>
+                                <P></P>
+                                <br> <b>Media Sosial</b>
+                                <br> </p>
+                                <P></P>
+                                <br> <b>Desain Grafis</b>
+                                <br> </p>
+                                <P></P>
+                                <br> <b>Konsultan Hukum</b>
+                                <br> </p>
+                                <P></P>
+                                <br> <b>Kontak Redaksi</b>
+                                <br> </p>
+                                <P></P>
+                                <br> <p><b>Email: </b> kolakaupdate@gmail.com
+                                <br> <b>Telepon: </b>08222222222</p>
+                                <P></P>
+                        </div>
                     </div>
                 </div>
                 {{-- end-content --}}
@@ -159,21 +165,25 @@
                     </div>
 
                     <div class="d-flex mb-3">
-                        <a target="_blank" href="{{ $fbs->link_sosmed }}" class="d-block w-50 py-2 px-3 text-white text-decoration-none mr-2"
+                        <a target="_blank" href="{{ $fbs->link_sosmed }}"
+                            class="d-block w-50 py-2 px-3 text-white text-decoration-none mr-2"
                             style="background: #39569E;">
                             <small class="fab fa-facebook-f mr-2"></small><small>Facebook</small>
                         </a>
-                        <a target="_blank" href="{{ $igs->link_sosmed }}" class="d-block w-50 py-2 px-3 text-white text-decoration-none ml-2"
+                        <a target="_blank" href="{{ $igs->link_sosmed }}"
+                            class="d-block w-50 py-2 px-3 text-white text-decoration-none ml-2"
                             style="background: #F1186B;">
                             <small class="fab fa-instagram mr-2"></small><small>Instagram</small>
                         </a>
                     </div>
                     <div class="d-flex mb-3">
-                        <a target="_blank" href="{{ $tks->link_sosmed }}" class="d-block w-50 py-2 px-3 text-white text-decoration-none mr-2"
+                        <a target="_blank" href="{{ $tks->link_sosmed }}"
+                            class="d-block w-50 py-2 px-3 text-white text-decoration-none mr-2"
                             style="background: #121618;">
                             <small class="fab fa-tiktok mr-2"></small><small>Tiktok</small>
                         </a>
-                        <a target="_blank" href="{{ $was->link_sosmed }}" class="d-block w-50 py-2 px-3 text-white text-decoration-none ml-2"
+                        <a target="_blank" href="{{ $was->link_sosmed }}"
+                            class="d-block w-50 py-2 px-3 text-white text-decoration-none ml-2"
                             style="background: #27CF17;">
                             <small class="fab fa-whatsapp mr-2"></small><small>Whatsapp</small>
                         </a>
@@ -188,11 +198,13 @@
                         @foreach ($populars as $popular)
                         <div class="d-flex  justify-content-center bg-light px-3" style="height:60px">
                             <div class="mb-0">
-                                <span class="px-1 py-1 font-weight-bold text-center text-dark" style="font-size: 24px">{{ $no++ }}.</span>
+                                <span class="px-1 py-1 font-weight-bold text-center text-dark"
+                                    style="font-size: 24px">{{ $no++ }}.</span>
                             </div>
-                            <a class="h6 m-0 mt-1 px-1 py-1" href="{{url('/')}}/{{$popular->slug_artikel}}" style="font-size: 14px">{{Str::words(ucfirst($popular->judul), 10)  }}</a>
+                            <a class="h6 m-0 mt-1 px-1 py-1" href="{{url('/')}}/{{$popular->slug_artikel}}"
+                                style="font-size: 14px">{{Str::words(ucfirst($popular->judul), 10)  }}</a>
                         </div>
-                            @endforeach
+                        @endforeach
                     </div>
                     {{-- End Popular News --}}
 
@@ -201,19 +213,19 @@
                         <h3 class="m-0 text-light">Terbaru</h3>
                     </div>
                     @foreach ($artikels as $artikel)
-                        <div class="d-flex mb-2">
-                            <div class="w-100 d-flex flex-column justify-content-center bg-light px-3"
-                                style="height: 100px;">
-                                <div class="mb-1" style="font-size: 13px;">
-                                    @foreach ($artikel->kategoris->take(1) as $kategori)
-                                    <a href="{{ url('/'."kategori/".$kategori->slug_kategori) }}">{{ Str::ucfirst($kategori->nama_kategori)}}</a>
-                                    <span class="px-1">/</span>
-                                    <span>{{ $artikel->created_at->isoFormat('D MMM Y'); }}</span>
-                                    @endforeach
-                                </div>
-                                <a class="h6 m-0" href="{{url('/')}}/{{$artikel->slug_artikel}}">{{Str::words(ucfirst($artikel->judul), 9)  }}</a>
+                    <div class="d-flex mb-2">
+                        <div class="w-100 d-flex flex-column justify-content-center bg-light px-3"
+                            style="height: 100px;">
+                            <div class="mb-1" style="font-size: 13px;">
+                                @foreach ($artikel->kategoris->take(1) as $kategori)
+                                <a href="">{{ Str::ucfirst($kategori->nama_kategori)}}</a>
+                                <span class="px-1">/</span>
+                                <span>{{ $artikel->created_at->isoFormat('D MMM Y'); }}</span>
+                                @endforeach
                             </div>
+                            <a class="h6 m-0" href="{{url('/')}}/{{$artikel->slug_artikel}}">{{Str::words(ucfirst($artikel->judul), 9)  }}</a>
                         </div>
+                    </div>
                     @endforeach
                     {{-- End Latest News --}}
 
@@ -223,7 +235,8 @@
                     </div>
                     <div class="d-flex flex-wrap m-n1 mb-3">
                         @foreach ($tags as $tag)
-                        <a href="{{ url('/'."tags/".$tag->slug_tag) }}" class="btn btn-sm btn-light btn-outline-secondary m-1">{{ ucfirst($tag->nama_tag) }}</a>
+                        <a href="{{ url('/'."tags/".$tag->slug_tag) }}"
+                            class="btn btn-sm btn-light btn-outline-secondary m-1">{{ ucfirst($tag->nama_tag) }}</a>
                         @endforeach
                     </div>
                     {{-- End Tags --}}
@@ -239,25 +252,31 @@
         <div class="row">
             <div class="col-lg-3 col-md-6 mb-5">
                 <a href="https://kolakaupdate.com" class="navbar-brand">
-                    <h1 class="mb-2 mt-n2 display-5 text-uppercase"><span class="text-primary"><img src="{{ url('/') }}/logo-panjang-kolakaupdate1.png" alt="" width="250px"></h1>
+                    <h1 class="mb-2 mt-n2 display-5 text-uppercase"><span class="text-primary"><img
+                                src="{{ url('/') }}/logo-panjang-kolakaupdate1.png" alt="" width="250px"></h1>
                 </a>
                 <p>Menyediakan Berita Terkini Untuk Wilayah Kolaka Dan Sekitarnya.</p>
                 <div class="d-flex justify-content-start mt-4">
-                    <a class="btn btn-outline-secondary btn-light text-center mr-2 px-0" style="width: 38px; height: 38px;"
-                    target="_blank" href="{{ $fbs->link_sosmed }}"><i class="fab fa-facebook-f"></i></a>
-                    <a class="btn btn-outline-secondary btn-light text-center mr-2 px-0" style="width: 38px; height: 38px;"
-                    target="_blank" href="{{ $igs->link_sosmed }}"><i class="fab fa-instagram"></i></a>
-                    <a class="btn btn-outline-secondary btn-light text-center mr-2 px-0" style="width: 38px; height: 38px;"
-                        target="_blank" href="{{ $tks->link_sosmed }}"><i class="fab fa-tiktok"></i></a>
-                    <a class="btn btn-outline-secondary btn-light text-center mr-2 px-0" style="width: 38px; height: 38px;"
-                        target="_blank" href="{{ $was->link_sosmed }}"><i class="fab fa-whatsapp"></i></a>
+                    <a class="btn btn-outline-secondary btn-light text-center mr-2 px-0"
+                        style="width: 38px; height: 38px;" target="_blank" href="{{ $fbs->link_sosmed }}"><i
+                            class="fab fa-facebook-f"></i></a>
+                    <a class="btn btn-outline-secondary btn-light text-center mr-2 px-0"
+                        style="width: 38px; height: 38px;" target="_blank" href="{{ $igs->link_sosmed }}"><i
+                            class="fab fa-instagram"></i></a>
+                    <a class="btn btn-outline-secondary btn-light text-center mr-2 px-0"
+                        style="width: 38px; height: 38px;" target="_blank" href="{{ $tks->link_sosmed }}"><i
+                            class="fab fa-tiktok"></i></a>
+                    <a class="btn btn-outline-secondary btn-light text-center mr-2 px-0"
+                        style="width: 38px; height: 38px;" target="_blank" href="{{ $was->link_sosmed }}"><i
+                            class="fab fa-whatsapp"></i></a>
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 mb-5">
                 <h4 class="font-weight-bold mb-4">Categories</h4>
                 <div class="d-flex flex-wrap m-n1">
                     @foreach ($kategoris as $kategori)
-                    <a href="{{ '/kategori/'.$kategori->slug_kategori }}" class="btn btn-sm btn-outline-secondary m-1">{{ ucfirst($kategori->nama_kategori) }}</a>
+                    <a href="{{ '/kategori/'.$kategori->slug_kategori }}"
+                        class="btn btn-sm btn-outline-secondary m-1">{{ ucfirst($kategori->nama_kategori) }}</a>
                     @endforeach
                 </div>
             </div>
@@ -272,14 +291,20 @@
             <div class="col-lg-3 col-md-6 mb-5">
                 <h4 class="font-weight-bold mb-4">Quick Links</h4>
                 <div class="d-flex flex-column justify-content-start">
-                    <a class="text-secondary mb-2" href="/tentang-kami"><i class="fa fa-angle-right text-dark mr-2"></i>Tentang Kami</a>
+                    <a class="text-secondary mb-2" href="/tentang-kami"><i
+                            class="fa fa-angle-right text-dark mr-2"></i>Tentang Kami</a>
                     <a class="text-secondary mb-2" href="/info-iklan"><i
                             class="fa fa-angle-right text-dark mr-2"></i>Info Iklan</a>
-                    <a class="text-secondary mb-1" href="/redaksi"><i class="fa fa-angle-right text-dark mr-2"></i>Redaksi</a>
-                    <a class="text-secondary mb-1" href="/pedoman-media-siber"><i class="fa fa-angle-right text-dark mr-2"></i>Pedoman Media Siber</a>
-                    <a class="text-secondary mb-1" href="/sop-perlindungan-wartawan"><i class="fa fa-angle-right text-dark mr-2"></i>SOP Perlindungan Wartawan</a>
-                    <a class="text-secondary mb-1" href="/kode-etik-internal"><i class="fa fa-angle-right text-dark mr-2"></i>Kode Etik Internal</a>
-                    <a class="text-secondary mb-1" href="/privacy-policy"><i class="fa fa-angle-right text-dark mr-2"></i>Privacy &
+                    <a class="text-secondary mb-1" href="/redaksi"><i
+                            class="fa fa-angle-right text-dark mr-2"></i>Redaksi</a>
+                    <a class="text-secondary mb-1" href="/pedoman-media-siber"><i
+                            class="fa fa-angle-right text-dark mr-2"></i>Pedoman Media Siber</a>
+                    <a class="text-secondary mb-1" href="/sop-perlindungan-wartawan"><i
+                            class="fa fa-angle-right text-dark mr-2"></i>SOP Perlindungan Wartawan</a>
+                    <a class="text-secondary mb-1" href="/kode-etik-internal"><i
+                            class="fa fa-angle-right text-dark mr-2"></i>Kode Etik Internal</a>
+                    <a class="text-secondary mb-1" href="/privacy-policy"><i
+                            class="fa fa-angle-right text-dark mr-2"></i>Privacy &
                         policy</a>
                 </div>
             </div>
@@ -287,7 +312,8 @@
     </div>
     <div class="container-fluid py-4 px-sm-3 px-md-5">
         <p class="m-0 text-center">
-            &copy; {{ date("Y"); }} | <a class="font-weight-bold" href="https://kolakaupdate.com">Kolaka Update</a>. All Rights Reserved.
+            &copy; {{ date("Y"); }} | <a class="font-weight-bold" href="https://kolakaupdate.com">Kolaka Update</a>. All
+            Rights Reserved.
         </p>
     </div>
     <!-- Footer End -->

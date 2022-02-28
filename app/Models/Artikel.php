@@ -41,6 +41,6 @@ class Artikel extends Model
 
     public function kategori_artikels()
     {
-        return $this->belongsTo(KategoriArtikel::class);
+        return $this->belongsToMany(KategoriArtikel::class);
     }
 }

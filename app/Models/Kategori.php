@@ -27,10 +27,10 @@ class Kategori extends Model
     // }
     public function kategori_artikels()
     {
-        return $this->hasMany(KategoriArtikel::class);
+        return $this->belongsToMany(KategoriArtikel::class);
     }
 
     public function artikels() {
-        return $this->hasMany(Artikel::class,'kategori_artikels');
+        return $this->belongsToMany(Artikel::class,'kategori_artikels');
     }
 }

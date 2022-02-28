@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Kategori | Kolaka Update - Berita Terkini Kolaka dan Sekitarnya</title>
+    <title>Tags | Kolaka Update - Berita Terkini Kolaka dan Sekitarnya</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="Kolaka Update" name="Kolaka, Update, Berita, Terkini">
     <meta content="Kolaka Update" name="Berita terkini kolaka dan sekitarnya.">
@@ -128,9 +128,8 @@
                 {{-- content --}}
                 <div class="col-lg-5 col-sm-12  order-first order-sm-0">
                     <div>
-                        <div>
-                            @foreach ($artikelKats as $artikelKat)
-                                @foreach ($artikelKat->artikels as $artikel)
+                            @foreach ($artikelTags as $artikelTag)
+                                @foreach ($artikelTag->artikels as $artikel)
                                 <div class="d-flex mb-3 shadow-sm border border-primary  align-items-center">
                                     <img class="justify-content-center" src="{{ url('/assets/img/artikel/'.$artikel->gambar_artikel) }}"
                                         style="width: 100px; height: 100px; object-fit: cover;">
@@ -147,7 +146,6 @@
                             <div class="text-center mb-3">
                                 @livewire('list-artikel')
                             </div>
-                        </div>
                     </div>
                 </div>
                 {{-- end-content --}}                <div class="col-lg-3 col-sm-12 order-1 order-sm-1">

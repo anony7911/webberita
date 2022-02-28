@@ -63,4 +63,14 @@ class HomeController extends Controller
     {
         return view('admin.banner-side');
     }
+
+    public function adminKelolaKategori()
+    {
+        return view('admin.kelola-kategori');
+    }
+
+    public function adminKelolaTags()
+    {
+        return view('admin.kelola-tags');
+    }
 }

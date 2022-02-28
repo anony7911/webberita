@@ -2,11 +2,13 @@
 
 namespace App\Http\Livewire;
 
+use App\Models\Tags;
 use App\Models\Artikel;
 use Livewire\Component;
 use App\Models\Kategori;
 use App\Models\Bannerhead;
 use App\Models\Bannerside;
+use GuzzleHttp\Psr7\Request;
 use Livewire\WithPagination;
 
 class ListArtikel extends Component
@@ -17,9 +19,7 @@ class ListArtikel extends Component
     public $paginate = 3;
     public $search = '';
 
-    // private $kategoriArts;
-    // private $artikelKats;
-    private $artikelKats1;
+    private $artikelKats;
 
     public function updatingSearch()
     {
@@ -33,19 +33,12 @@ class ListArtikel extends Component
     {
         $this->amount = $this->amount + 5;
     }
-    public $roles;
 
     public function render()
     {
-        // if ($this->search == null) {
-            $this->artikelKats = Artikel::has('kategoris')->orderBy('id','desc')->where('is_active', 1)->take($this->amount)->get();
-            // $this->artikelKats= Kategori::with('artikels')->orderBy('id','desc')->take($this->amount)->get();
-        // }else{
-        //     $this->artikelKats = Artikel::has('kategoris')->orderBy('id','desc')->where('is_active', 1)->take($this->amount)->get();
-        // }
-
+        // $this->artikelKats = Artikel::wherehas('kategoris')->where('is_active', 1)->where('judul', 'like', '%' . $this->search . '%')->paginate($this->amount);
+        $this->artikelKats = Kategori::with('artikels')->paginate($this->amount);
         return view('livewire.list-artikel',[
-            // 'kategoriArts' => $this->kategoriArts,
             'artikelKats' => $this->artikelKats,
             ]);
     }

@@ -69,6 +69,25 @@
           </a>
         </li>
         <li class="nav-item mt-3">
+            <h6 class="ps-4 ms-2 text-uppercase text-xs text-white font-weight-bolder opacity-8">Kelola Tags & Kategori</h6>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white {{ Request::url() == url('/admin/kelola-kategori') ? 'active bg-gradient-warning' : '' }}" href="{{ url('/') }}/admin/kelola-kategori">
+              <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+                <i class="material-icons opacity-10">receipt_long</i>
+              </div>
+              <span class="nav-link-text ms-1">Artikel Kategori</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white {{ Request::url() == url('/admin/kelola-tags') ? 'active bg-gradient-warning' : '' }}" href="{{ url('/') }}/admin/kelola-tags">
+              <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+                <i class="material-icons opacity-10">view_in_ar</i>
+              </div>
+              <span class="nav-link-text ms-1">Artikel Tags</span>
+            </a>
+          </li>
+        <li class="nav-item mt-3">
           <h6 class="ps-4 ms-2 text-uppercase text-xs text-white font-weight-bolder opacity-8">Account pages</h6>
         </li>
         <li class="nav-item">
